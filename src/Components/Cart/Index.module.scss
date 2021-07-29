@@ -1,0 +1,57 @@
+$gray:#f0eff0;
+
+.cartContainer{
+
+    display:flex;
+    flex-direction: column;;
+    position:relative;
+
+    .icon{
+        width:1.7rem;
+        height:1.7rem;
+        cursor:pointer;
+        position:relative;
+    
+        @media(min-width:1024px){
+            width:1.9rem;
+            height:1.9rem;
+        }
+    
+        @media(min-width:1248px){
+            width:2rem;
+            height:2rem;
+        }
+    }
+
+    .productList{
+        position:absolute;
+        width:300px;
+        height:2rem;
+        right:0;
+        bottom:-48px;
+        background:$gray;
+        display:none;
+
+
+        .triangle{
+            position:absolute;
+            width:2rem;
+            height:1.5rem;
+            color:$gray;
+            right:0;
+            top:-15px;
+            text-align:right;
+           
+        }
+
+    }
+
+
+
+
+}
+
+
+
+
+
