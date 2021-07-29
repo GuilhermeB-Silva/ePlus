@@ -12,13 +12,11 @@ export function Cart({products}){
         setIsProductListShowing(!isProductListShowing)
     }
 
-
     const totalValue = products?.reduce((acc,cur)=>{
         return acc + cur.calcPrice
     },0)
 
     const totalPrice = new Intl.NumberFormat('pt-BR',{ style: 'currency', currency: 'BRL' }).format(totalValue) 
-
 
     return(
 

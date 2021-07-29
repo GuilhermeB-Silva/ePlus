@@ -1,12 +1,13 @@
 import styles from './Index.module.scss';
+
 import { MdDehaze,MdClose } from "react-icons/md";
+
 import { useEffect,useState } from 'react';
+import axios from 'axios'
 
 import { Cart } from '../Cart/Index';
 import { User} from '../User/Index';
 import { Search } from '../Search/Index';
-
-import axios from 'axios'
 
 export function Header(){
 
