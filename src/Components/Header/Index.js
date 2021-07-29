@@ -12,7 +12,6 @@ export function Header(){
 
     const [ isMenuMobileOpen,setIsMenuMobileOpen] = useState(false)
     const [ products, setProducts] = useState()
-    const [ windowSize,setWindowSize] = useState()
 
     useEffect(()=>{
         async function getApiData(){
@@ -35,12 +34,7 @@ export function Header(){
         }
         getApiData()
 
-        const windowWidth = window.innerWidth
-        setWindowSize(windowWidth)
-
-    },[windowSize])
-
-    console.log(windowSize)
+    },[])
 
     function OpenMenuMobile(){
         setIsMenuMobileOpen(true)
@@ -56,11 +50,9 @@ export function Header(){
             <div className={styles.headerContainer__content}>
 
                 <div className={styles.logo}>
-
                     <img 
                     src="https://www.agenciaeplus.com.br/wp-content/themes/eplus/images/agencia-eplus-n-logo.png" 
                     alt="Eplus logo"/>
-
                 </div>
 
                 <div className={`${styles.showMenu} ${isMenuMobileOpen ? styles.mobileOpen: ''}`}>

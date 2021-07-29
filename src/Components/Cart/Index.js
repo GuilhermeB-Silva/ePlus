@@ -34,7 +34,7 @@ export function Cart({products}){
                         <ProductDetails product={product} key={product.id}/>
                     ))
                 }
-                <span className={styles.totalPrice}>Total do pedido <b>{totalPrice}</b></span>
+                <span className={styles.totalPrice}>Total do pedido: <b>{totalPrice}</b></span>
                 <button className={styles.checkoutBtn}>FINALIZAR COMPRA</button>
             </div>
 
