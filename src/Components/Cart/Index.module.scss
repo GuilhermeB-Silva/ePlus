@@ -1,4 +1,6 @@
-$gray:#f0eff0;
+$grayMobile:#f0eff0;
+$green:#0bba15;
+
 
 .cartContainer{
 
@@ -7,8 +9,8 @@ $gray:#f0eff0;
     position:relative;
 
     .icon{
-        width:1.7rem;
-        height:1.7rem;
+        width:3rem;
+        height:3rem;
         cursor:pointer;
         position:relative;
     
@@ -22,33 +24,53 @@ $gray:#f0eff0;
             height:2rem;
         }
     }
-
+    
     .productList{
         position:absolute;
         width:300px;
-        height:2rem;
-        right:0;
-        bottom:-48px;
-        background:$gray;
-        display:none;
+        height:max-content;
+        bottom:0px;
+        top:55px;
+        right:8px;
+        background:$grayMobile;
+        display:flex;
+        flex-direction:column;
 
+        @media(min-width:1024px){
+            right:0;
+            top:45px
+        }
 
         .triangle{
             position:absolute;
             width:2rem;
             height:1.5rem;
-            color:$gray;
+            color:$grayMobile;
             right:0;
             top:-15px;
             text-align:right;
-           
         }
 
+        .totalPrice{
+            background:#e5e5e5;
+            padding:1.2rem 2rem 1rem;
+            color:#555555;
+            letter-spacing:0.5px;
+        }
+
+        .checkoutBtn{
+            background:$green;
+            padding:1rem 3rem;
+            border:none;
+            color:white;
+            font-weight:900;
+            cursor:pointer
+        }
     }
 
-
-
-
+    .showList{
+        display:none;
+    }
 }
 
 

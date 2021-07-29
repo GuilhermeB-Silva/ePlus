@@ -1,7 +1,6 @@
 $gray:#f0eff0;
 
 
-
 .headerContainer{
     width:100;
     box-shadow:0px 3px 10px lightgray;
@@ -95,7 +94,7 @@ $gray:#f0eff0;
                 bottom:0;
                 left:0;
                 right:0;
-                background:$gray;
+                background:#CCCCCC;
                 padding:1rem 2rem;
                 display:flex;
                 flex-direction:column;
@@ -138,9 +137,24 @@ $gray:#f0eff0;
                 }
 
                 .containerIcons{
-                    display:none;
+                    order:-1;
+                    margin:0;
+                    margin-top:1.5rem;
+                    width:100%;
+                    display:flex;
+                    justify-content:space-between;
                 }
 
+                .menuIcon{
+                    order:-2;
+                    width:2rem;
+                    height:2rem;
+                    cursor:pointer;
+        
+                    @media(min-width:1024px){
+                        display:none;
+                    }
+                }
             }
         }
 

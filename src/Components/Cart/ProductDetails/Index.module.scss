@@ -1,0 +1,48 @@
+$green:#0bba15;
+
+
+.products{
+    display:flex;
+    padding:0 0.5rem;
+
+    .product{
+        display:flex;
+        align-items:center;
+        padding:.8rem;
+        border-bottom:1px solid gray;;
+
+        
+        .imageProduct{
+            width:100px;
+
+            & > img{
+                width:100%;
+            }
+        }
+
+        .productDetailed{
+            height:100%;
+            display:grid;
+            padding:1rem;
+            align-items:center;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: repeat(2,auto);
+
+            .productName{
+                grid-column-start:1;
+                grid-column-end:3;
+                width:100%;
+                font-weight:lighter;
+            }
+
+            .productQuantity{
+
+            }
+
+            .productPrice{
+                color:$green;
+                font-weight:bold
+            }
+        }
+    }
+}

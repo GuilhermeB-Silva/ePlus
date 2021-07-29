@@ -12,6 +12,7 @@ export function Header(){
 
     const [ isMenuMobileOpen,setIsMenuMobileOpen] = useState(false)
     const [ products, setProducts] = useState()
+    const [ windowSize,setWindowSize] = useState()
 
     useEffect(()=>{
         async function getApiData(){
@@ -23,7 +24,8 @@ export function Header(){
                         id:product.id,
                         name:product.name,
                         img:product.imgUrl,
-                        price:product.price
+                        price:new Intl.NumberFormat('pt-BR',{ style: 'currency', currency: 'BRL' }).format(product.price),
+                        calcPrice:product.price
                     }
                 }).slice(0,4)
                 setProducts(arrayProducts)
@@ -32,7 +34,13 @@ export function Header(){
             }    
         }
         getApiData()
-    },[])
+
+        const windowWidth = window.innerWidth
+        setWindowSize(windowWidth)
+
+    },[windowSize])
+
+    console.log(windowSize)
 
     function OpenMenuMobile(){
         setIsMenuMobileOpen(true)
@@ -40,7 +48,6 @@ export function Header(){
 
     function closeMenuMobile(){
         setIsMenuMobileOpen(false)
-
     }
 
     return(
@@ -71,9 +78,9 @@ export function Header(){
                     </div>
 
                     <div className={styles.containerIcons}>
-                        <Search className={styles.icon}/>
-                        <User className={styles.icon}/>
-                        <Cart products={products} className={styles.icon}/>
+                        <Search />
+                        <User />
+                        <Cart products={products}/>
                     </div>
 
                 </div>
